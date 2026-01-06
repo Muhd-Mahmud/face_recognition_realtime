@@ -57,15 +57,15 @@ while True:
         for encodeFace, faceLoc in  zip(encodeCurFrame, faceCurFrame):
             matches = face_recognition.compare_faces(encodeListKnown,encodeFace)
             faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
-            #print("matches", matches)
-            #print("faceDis",faceDis)
+            print("matches", matches)
+            print("faceDis",faceDis)
 
             matchIndex = np.argmin(faceDis)
-            #print("Match Index", matchIndex)
+            print("Match Index", matchIndex)
 
             if matches[matchIndex]:
-                # print("known Face Detector")
-                # print(studentIds[matchIndex])
+                print("known Face Detector")
+                print(studentIds[matchIndex])
                 y1, x2, y2, x1 = faceLoc
 
                 # Scale back from the small image (0.25 scale)
